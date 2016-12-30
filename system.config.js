@@ -6,6 +6,11 @@
     // map tells the System loader where to look for things
     var map = {
         'app':                        'app', // 'dist',
+        '@angular/core':               'node_modules/@angular/core/bundles/',
+        '@angular/platform-browser-dynamic': 'node_modules/@angular/platform-browser-dynamic/bundles/',
+        '@angular/platform-browser': 'node_modules/@angular/platform-browser/bundles/',
+        '@angular/compiler': 'node_modules/@angular/compiler/bundles/',
+        '@angular/common': 'node_modules/@angular/common/bundles/',
         '@angular':                   'node_modules/@angular',
         'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
         'rxjs':                       'node_modules/rxjs'
