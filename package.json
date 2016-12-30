@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "typings":"typings",
+    "postinstall":"typings install",
+    "tsc:w":"tsc -w",
+    "lite":"lite-server",
+    "start":"tsc && concurrently \"npm run tsc:w\" \"npm run lite\""
   },
   "author": "M.H.",
   "license": "ISC",
