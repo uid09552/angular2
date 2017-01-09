@@ -8,25 +8,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var user_component_1 = require("./user.component");
-var common_1 = require("@angular/common");
-var italic_module_1 = require("../directives/italic.module");
-var user_service_1 = require("./user.service");
 var user_data_1 = require("./user.data");
-var UserModule = (function () {
-    function UserModule() {
+var core_1 = require("@angular/core");
+var UserService = (function () {
+    function UserService(userDataService) {
+        this.userDataService = userDataService;
     }
-    return UserModule;
+    UserService.prototype.setSelectedUser = function (user) {
+        localStorage.setItem('selected', JSON.stringify(user));
+    };
+    UserService.prototype.getSelectedUser = function () {
+        return JSON.parse(localStorage.getItem('selected'));
+    };
+    UserService.prototype.getUserList = function () {
+        return this.userDataService.getUserList();
+    };
+    return UserService;
 }());
-UserModule = __decorate([
-    core_1.NgModule({
-        imports: [common_1.CommonModule, italic_module_1.ItalicModule],
-        declarations: [user_component_1.UserComponent],
-        exports: [user_component_1.UserComponent],
-        providers: [user_service_1.UserService, user_data_1.UserDataService]
-    }),
-    __metadata("design:paramtypes", [])
-], UserModule);
-exports.UserModule = UserModule;
-//# sourceMappingURL=user.module.js.map
+UserService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [user_data_1.UserDataService])
+], UserService);
+exports.UserService = UserService;
+//# sourceMappingURL=user.service.js.map

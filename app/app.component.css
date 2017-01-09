@@ -1,3 +1,6 @@
 nav{color:red;}
 main{background-color:silver;}
 footer{font-size: smaller;}
+.italic{background-color: red; color: blue;font-weight: bold;}
+
+.saveSelected{border-style:solid; border-color:black; font-family: Algerian;}

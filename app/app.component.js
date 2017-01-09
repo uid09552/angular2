@@ -9,10 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var user_service_1 = require("./user/user.service");
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(userService) {
+        this.userService = userService;
+        this.fontColor = "red";
+        this.username2 = "Username2 @Insert()";
+        this.userList = this.userService.getUserList();
         console.log("App Component initialized");
+        this.selectedUser = this.userService.getSelectedUser();
     }
+    AppComponent.prototype.selected = function (event) {
+        console.log(event);
+        this.selectedUser = event;
+        this.userService.setSelectedUser(this.selectedUser);
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
@@ -21,7 +32,7 @@ AppComponent = __decorate([
         templateUrl: './app/app.component.html',
         styleUrls: ['./app/app.component.css']
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [user_service_1.UserService])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

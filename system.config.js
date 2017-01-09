@@ -7,6 +7,7 @@
     var map = {
         'app':                        'app', // 'dist',
         '@angular/core':               'node_modules/@angular/core/bundles/',
+        '@angular/router':               'node_modules/@angular/router/bundles/',
         '@angular/platform-browser-dynamic': 'node_modules/@angular/platform-browser-dynamic/bundles/',
         '@angular/platform-browser': 'node_modules/@angular/platform-browser/bundles/',
         '@angular/compiler': 'node_modules/@angular/compiler/bundles/',

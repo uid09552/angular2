@@ -9,24 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var user_module_1 = require("./user/user.module");
-var italic_module_1 = require("./directives/italic.module");
-var home_module_1 = require("./home/home.module");
-var app_routing_1 = require("./app.routing");
-var AppModule = (function () {
-    function AppModule() {
+var italic_directive_1 = require("./italic.directive");
+var reverse_pipe_1 = require("./reverse.pipe");
+var ItalicModule = (function () {
+    function ItalicModule() {
     }
-    return AppModule;
+    return ItalicModule;
 }());
-AppModule = __decorate([
+ItalicModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, user_module_1.UserModule, italic_module_1.ItalicModule, home_module_1.HomeModule, app_routing_1.routing],
-        declarations: [app_component_1.AppComponent],
-        bootstrap: [app_component_1.AppComponent]
+        declarations: [italic_directive_1.MyItalic, reverse_pipe_1.ReversePipe],
+        exports: [italic_directive_1.MyItalic, reverse_pipe_1.ReversePipe]
     }),
     __metadata("design:paramtypes", [])
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], ItalicModule);
+exports.ItalicModule = ItalicModule;
+//# sourceMappingURL=italic.module.js.map
